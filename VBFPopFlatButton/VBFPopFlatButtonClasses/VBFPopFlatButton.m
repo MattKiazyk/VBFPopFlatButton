@@ -282,7 +282,13 @@
     [self.secondSegment animatePositionToPoint:secondOriginPoint];
     [self.thirdSegment animatePositionToPoint:thirdOriginPoint];
 
-    self.currentButtonType = finalType;
+    _currentButtonType = finalType;
+}
+
+- (void)setCurrentButtonType:(FlatButtonType)currentButtonType {
+    if (self.currentButtonType != currentButtonType) {
+        [self animateToType:currentButtonType];
+    }
 }
 
 #pragma mark - Deprecated
